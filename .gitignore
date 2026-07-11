@@ -1,0 +1,22 @@
+# dependencies
+node_modules
+client/node_modules
+server/node_modules
+
+# environment files
+.env
+server/.env
+client/.env
+
+# build files
+dist
+client/dist
+
+# system files
+.DS_Store
+
+# logs
+npm-debug.log*
+# backup files
+*_backup_*.js
+*_backup_*.jsx

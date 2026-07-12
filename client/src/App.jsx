@@ -42,14 +42,14 @@ function App() {
   });
 
   const loadTickets = () => {
-    fetch("http://localhost:5001/api/tickets")
+    fetch("https://deskflow-api-tanmoy-gqhmajc9bjgff2d7.eastus-01.azurewebsites.net/api/tickets")
       .then((response) => response.json())
       .then((data) => setTickets(data))
       .catch((error) => console.error("Error loading tickets:", error));
   };
 
   const loadAssets = () => {
-    fetch("http://localhost:5001/api/assets")
+    fetch("https://deskflow-api-tanmoy-gqhmajc9bjgff2d7.eastus-01.azurewebsites.net/api/assets")
       .then((response) => response.json())
       .then((data) => setAssets(data))
       .catch((error) => console.error("Error loading assets:", error));
@@ -91,7 +91,7 @@ function App() {
   const handleTicketSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5001/api/tickets", {
+    fetch("https://deskflow-api-tanmoy-gqhmajc9bjgff2d7.eastus-01.azurewebsites.net/api/tickets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -115,7 +115,7 @@ function App() {
   const handleAssetSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5001/api/assets", {
+    fetch("https://deskflow-api-tanmoy-gqhmajc9bjgff2d7.eastus-01.azurewebsites.net/api/assets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -161,7 +161,7 @@ function App() {
   };
 
   const updateTicket = (id) => {
-    fetch(`http://localhost:5001/api/tickets/${id}`, {
+    fetch(`https://deskflow-api-tanmoy-gqhmajc9bjgff2d7.eastus-01.azurewebsites.net/api/tickets/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -177,7 +177,7 @@ function App() {
   };
 
   const updateAsset = (id) => {
-    fetch(`http://localhost:5001/api/assets/${id}`, {
+    fetch(`https://deskflow-api-tanmoy-gqhmajc9bjgff2d7.eastus-01.azurewebsites.net/api/assets/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -196,7 +196,7 @@ function App() {
     const confirmDelete = window.confirm("Are you sure you want to delete this ticket?");
     if (!confirmDelete) return;
 
-    fetch(`http://localhost:5001/api/tickets/${id}`, {
+    fetch(`https://deskflow-api-tanmoy-gqhmajc9bjgff2d7.eastus-01.azurewebsites.net/api/tickets/${id}`, {
       method: "DELETE"
     })
       .then((response) => response.json())
@@ -208,7 +208,7 @@ function App() {
     const confirmDelete = window.confirm("Are you sure you want to delete this asset?");
     if (!confirmDelete) return;
 
-    fetch(`http://localhost:5001/api/assets/${id}`, {
+    fetch(`https://deskflow-api-tanmoy-gqhmajc9bjgff2d7.eastus-01.azurewebsites.net/api/assets/${id}`, {
       method: "DELETE"
     })
       .then((response) => response.json())
